@@ -1,0 +1,438 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color:cornsilk;
+    overflow-x: hidden;
+
+}
+
+/* some things for all the site */
+
+.heading {
+
+    text-align: center;
+    color: darkmagenta;
+    font-size: 3rem;
+    margin-top: 8rem;
+    font-style: italic;
+    text-shadow: 2px 2px 7px fuchsia;
+}
+
+.subheading {
+    grid-area: subheading;
+    color: darkmagenta;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 2px 2px 5px fuchsia;
+}
+
+/* navigation bar */
+
+#navbar {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    opacity: 40%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+/*  logo designing  */
+
+#logo img {
+    margin: 2px 30px;
+    height: 50px;
+}
+
+#logo {
+    transition-property: all;
+    animation-name: logoshow;
+    animation-duration: 4s;
+    animation-delay: 1.8s;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes logoshow {
+
+    40% {
+        transform: scale(4);
+        translate: 150px 150px;
+    }
+
+    80% {
+        transform: scale(4);
+        translate: 150px 150px;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#logo:active {
+    transform: scale(4);
+    translate: 150px 150px;
+}
+
+/* navbar items */
+
+#navbar ul {
+
+    display: flex;
+    margin: auto 2px;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    padding: 3px 40px;
+    color: aliceblue;
+
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: aliceblue;
+    border-radius: 20px;
+
+}
+
+#items {
+
+    display: block;
+    margin: 0px auto;
+
+}
+
+/* home */
+#home .heading {
+    margin-top: 18rem;
+    font-size: 5rem;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    height: 60vh;
+    justify-content: space-between;
+}
+
+/* home background */
+
+#home::before {
+    content: "";
+    background: url(/img/background.jpg) center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 70vh;
+    width: 100%;
+    opacity: 70%;
+    z-index: -2;
+
+}
+
+#home p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-style: italic;
+    width: 500px;
+    margin-top: 30px;
+}
+
+#order {
+    background-color: white;
+    font-size: large;
+    font-weight: 600;
+    padding: 3px 3px;
+    border: 5px ridge pink;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+#order:hover {
+    background-color: black;
+    color: white;
+}
+
+/* services */
+
+#service {
+    display: flex;
+    flex-direction: row;
+}
+
+/* foodboxes in servicebox*/
+
+.foodbox img {
+    grid-area: img;
+    height: 160px;
+    border-radius: 11px;
+
+
+}
+
+#servicebox p {
+    grid-area: p;
+}
+
+.foodbox {
+    background-color: #f0e7e9;
+    display: grid;
+    border: 2px solid red;
+    height: 300px;
+    border-radius: 20px;
+    grid-gap: 1rem;
+    grid-template-areas:
+        'subheading subheading subheading '
+        'img img p '
+    ;
+    align-items: center;
+    margin: 12px;
+    padding: 10px;
+}
+
+/* Partners */
+#partner .heading {
+    font-size: 3.5rem;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+}
+.partnarea
+{
+    margin:0 auto;
+    width:98%;
+    border:2px solid red;
+    border-radius: 23px;
+}
+#partnerbox {
+
+    
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1.5fr));
+    gap: 1rem;
+    border-radius: 10px;
+    margin: 0 auto;
+    filter: opacity(80%);
+    background: linear-gradient(to  right, yellow ,pink,lightblue);
+    position: relative;
+    z-index: -1;
+    border: none;
+}
+
+#partnerbox img {
+    height: 9vw;
+    margin: 0px auto;
+    width: 9vw;
+    padding: 4px 4px;
+}
+
+/* contact us  */
+
+.content {
+    font-family: 'Sigmar', cursive;
+    text-align: center;
+    border: 2px solid darkslategrey;
+    display: block;
+    width: 95%;
+    position: relative;
+    padding: 22px 25px;
+    text-shadow: 3px 3px 30px red;
+    margin: auto;
+    margin-bottom: 20vh;
+    border-radius: 25px;
+    border-color: red;
+
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 1px;
+    top: 2px;
+    background-color: lightpink;
+    z-index: -1;
+    opacity: 60%;
+    filter: blur(80px);
+}
+
+.data input {
+    padding: 3px 0px;
+    font-size: 20px;
+    display: block;
+    border: 2px solid #1f5651;
+    margin: 28px auto;
+    width: 70%;
+    height: 31px;
+}
+
+.btn {
+    font-weight: bold;
+    font-size: 28px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 14px;
+    padding: 5px 14px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f0e7e9;
+    color: black;
+}
+
+
+/* footer  */
+footer{
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .social_icon,
+footer .menu
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+
+}
+
+footer .social_icon li,
+footer .menu li
+{
+    list-style: none;
+}
+
+footer .social_icon li a
+{
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .social_icon li a:hover
+{
+    transform: translateY(-10px);
+}
+
+footer .menu li a
+{
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+footer .menu li a:hover{
+    opacity: 1;
+
+}
+
+footer p
+{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+
+}
+
+footer .wave
+{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../img/wave.png);
+    background-size:1000px 100px;
+}
+
+footer .wave#wave1
+{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+
+}
+
+footer .wave#wave2
+{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3
+{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 0;
+    animation: animateWave 3s linear infinite;
+
+}
+
+footer .wave#wave4
+{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 10px;
+    animation: animateWave_02 3s linear infinite;
+}
+
+
+@keyframes animateWave 
+{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animateWave_02
+ {
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
